@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: mikeesto/heroku-awake@1.0.0
         with:
-          URL: "https://note-scout-services.herokuapp.com"
+          URL: "https://note-scout-services.herokuapp.com/scoutnote"
