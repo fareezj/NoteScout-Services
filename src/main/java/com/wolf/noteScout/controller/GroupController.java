@@ -20,15 +20,19 @@ public class GroupController {
 
     @PutMapping("/scoutnote/checkGroup/{groupId}/{groupOwner}")
     public Group group(@PathVariable int groupId, @PathVariable String groupOwner) {
-
-        List<Group> result = groupRepository.findByGroupId(groupId);
         Group group = new Group();
         group.setGroupId(groupId);
         group.setGroupOwner(groupOwner);
-        if(result == null) {
-            return groupRepository.save(group);
-        }else {
-           return null;
-        }
+        return groupRepository.save(group);
+
+//        List<Group> result = groupRepository.findByGroupId(groupId);
+//        Group group = new Group();
+//        group.setGroupId(groupId);
+//        group.setGroupOwner(groupOwner);
+//        if(result == null) {
+//            return groupRepository.save(group);
+//        }else {
+//           return null;
+//        }
     }
 }
