@@ -20,9 +20,11 @@ public class GroupController {
 
     @PutMapping("/scoutnote/checkGroup/{groupId}/{groupOwner}")
     public Group group(@PathVariable int groupId, @PathVariable String groupOwner) {
-        Group group = new Group();
-        group.setGroupId(groupId);
-        group.setGroupOwner(groupOwner);
+        Group group = new Group(
+                groupId,
+                groupOwner
+        );
+
         return groupRepository.save(group);
 
 //        List<Group> result = groupRepository.findByGroupId(groupId);
