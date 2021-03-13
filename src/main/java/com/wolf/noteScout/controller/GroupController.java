@@ -18,7 +18,7 @@ public class GroupController {
 //        return groupRepository.save(group);
 //    }
 
-    @GetMapping("/scoutnote/checkGroup/{groupId}/{groupOwner")
+    @PutMapping("/scoutnote/checkGroup/{groupId}/{groupOwner")
     public Group group(@PathVariable int groupId, @PathVariable String groupOwner) {
 
         List<Group> result = groupRepository.findByGroupId(groupId);
