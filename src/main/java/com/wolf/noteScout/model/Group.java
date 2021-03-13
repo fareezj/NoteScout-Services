@@ -10,7 +10,10 @@ public class Group {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(name = "groupId")
     private int groupId;
+
+    @Column(name = "groupOwner")
     private String groupOwner;
 
     public Group() {}
