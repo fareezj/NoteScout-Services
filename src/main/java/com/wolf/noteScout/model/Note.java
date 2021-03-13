@@ -74,7 +74,7 @@ public class Note {
 
     @Override
     public String toString() {
-        return "Blog{" +
+        return "Note{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", checked='" + checked + '\'' +
