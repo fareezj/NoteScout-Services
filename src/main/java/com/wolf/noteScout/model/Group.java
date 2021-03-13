@@ -3,7 +3,7 @@ package com.wolf.noteScout.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "group")
+@Table(name = "`group`")
 public class Group {
 
     @Id
