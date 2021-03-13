@@ -28,12 +28,12 @@ public class GroupController {
 //
 //        return groupRepository.save(group);
 
-        List<Group> result = groupRepository.findByGroupId(groupId);
+        Group result = groupRepository.findOne(groupId);
         Group group = new Group(
                 groupId,
                 groupOwner
         );
-        if(result.isEmpty()) {
+        if(result == null) {
             return groupRepository.save(group);
         }else {
            return null;
