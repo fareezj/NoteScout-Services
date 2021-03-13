@@ -21,22 +21,15 @@ public class GroupController {
 
     @PutMapping("/scoutnote/addGroup/{groupId}/{groupOwner}")
     public Group addNewGroup(@PathVariable int groupId, @PathVariable String groupOwner) {
-//        Group group = new Group(
-//                groupId,
-//                groupOwner
-//        );
-//
-//        return groupRepository.save(group);
 
-        Group result = groupRepository.findOne(groupId);
-        Group group = new Group(
-                groupId,
-                groupOwner
-        );
-        if(result != null) {
-            return null;
+        if(groupRepository.findByGroupId(groupId).isEmpty()) {
+            Group group = new Group(
+                    groupId,
+                    groupOwner
+            );
+            return groupRepository.save(group);
         }else {
-           return groupRepository.save(group);
+           return null;
         }
     }
 }
