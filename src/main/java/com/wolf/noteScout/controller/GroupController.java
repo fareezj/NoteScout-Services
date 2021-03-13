@@ -33,7 +33,7 @@ public class GroupController {
                 groupId,
                 groupOwner
         );
-        if(result == null) {
+        if(result.isEmpty()) {
             return groupRepository.save(group);
         }else {
            return null;
