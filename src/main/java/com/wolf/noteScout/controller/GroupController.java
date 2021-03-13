@@ -28,15 +28,15 @@ public class GroupController {
 //
 //        return groupRepository.save(group);
 
-        List<Group> result = groupRepository.findByGroupId(groupId);
+        Group result = groupRepository.findOne(groupId);
         Group group = new Group(
                 groupId,
                 groupOwner
         );
-        if(!result.isEmpty()) {
-            return groupRepository.save(group);
+        if(result != null) {
+            return null;
         }else {
-           return null;
+           return groupRepository.save(group);
         }
     }
 }
